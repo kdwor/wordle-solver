@@ -1,0 +1,342 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1388,2765" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1398,2700" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="CompatibleWordArray" />
+      <Variable x:TypeArguments="x:String" Name="WordsFileData" />
+      <Variable x:TypeArguments="x:String" Name="CurrentWord" />
+      <Variable x:TypeArguments="s:String[]" Name="CorrectArray" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="AbsentList" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="ElsewhereList" />
+      <Variable x:TypeArguments="x:Int32" Name="CurrentRow" />
+      <Variable x:TypeArguments="s:String[]" Name="CurrentCompatibleWordArray" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="isCompleted" />
+      <Variable x:TypeArguments="x:String" Name="AbsentString" />
+      <Variable x:TypeArguments="s:String[]" Name="ElsewhereArray" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="ElsewhereSingleList" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut sap2010:Annotation.AnnotationText="Enable to show stats before each run" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1356,93" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,754" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Show stats for 10 seconds before each run" sap:VirtualizedContainerService.HintSize="434,662" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="0916cd69-d687-4114-9f70-e7ef5fcf7741" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,446" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DelayAfter="10" DisplayName="Click Stats button" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0916cd69-d687-4114-9f70-e7ef5fcf7741" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://wordlegame.org/" DesignTimeRectangle="878, 96, 22, 22" FriendlyName="'USE'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;svg&amp;gt;use' tag='use' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='use' class='' aaname='' /&gt;" Guid="8804fd4a-e734-4eb8-8882-3dfae2f5b3eb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACnSURBVEhLY3j99vN/WmCCBj968oYoMXRM0OBZi7f+zyztQ8GT56zHqhYZEzR44cpdGAaDxLCpRcYjyOBnL99jVQ/DZBt85uLt/+VNM/7XtM2BYxAfpo9sg2/ceYIhDsIwfcPM4JevP1Jm8P1Hr/639i/53zdjNRx3TlkO1kyxi7EpGjUYjkcNhmOQ5lmLtmCIg8SINhgbfvL8LVZxUNVEcelGHv78HwAVqxj+VTaPHAAAAABJRU5ErkJggg==" InformativeScreenshot="2e16fb3dbc4d8180adb8d6cf888981ac.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle Game - Play Unlimited' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="924, 98, 18, 18" FriendlyName="'USE'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;svg&amp;gt;use' idx='2' tag='use' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='use' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEFSURBVEhLxZO9CsJAEAZ9XR/Awt7KwsZKSxvBTrCy0lYQewVbC7HKA0RG2LC395EcgWAxELJ7k/3Jjd6fqh6C/4pXm0M9nix+7PZnmRMpEk9n60bMs8qJZOLH89UIeKZCkxq8I0aO5UVPJo6SElQXidiqUIfbmC+3iRSyio+na3aQ5dE+Mb9I43K7Jw7oFKtDce6tYpLjGKjOJ3to3+dyFofFG7FPMqje4pFYtWHxVrGvIKJ2ARZPRhHbU9s2ikdhsAh/QFUdc9TIMrFqkSXyno/0/t1iiyV03jzoI1a7yMRca9qlCtpXo2Ek5CFUUsjEitiFyokUiX3VbbfRUyTuw0Diqv4C3ZJJCkClNP0AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ClickType="Single" DisplayName="Click exit button" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0916cd69-d687-4114-9f70-e7ef5fcf7741" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://wordlegame.org/" DesignTimeRectangle="962, 139, 20, 20" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button' parentid='modal_stats' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl type='button' parentid='modal_stats' tag='BUTTON' class='close' aaname='' /&gt;" Guid="e6d7a0ac-4cec-4ca7-9005-e22c02e9809b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADcSURBVEhL7ZQxCgIxEEW9uL249UJqQVtBW0FsxSNot2yxnXiAyBeCQ2aS+QHttnjNzuS/nQlk8XpO8Z/MAhdTcNjv4jjc1fcS6L1dL2ZNCRDerZYx9B0lQc92Ez5nzqejqisBDiCckchw9Fo95ooYCRMOipdck7DhoCgAlqQlHFQFIJe0hANXAKSkJRzQgvTnSYBvVm8OtSK5ljRJ6NeUxL3kfOfj8BASf5KiwAqXNVZiCmrh3x5uEiVgwhPMJEqAV5EJT0gJHsq8bk5gvYo1cMYKB8VL/hWzwGGKbxh0LZRHULktAAAAAElFTkSuQmCC" InformativeScreenshot="e5d210647cfc61b905dae4b5b58d23e7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle Game - Play Unlimited' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="924, 98, 18, 18" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;svg' idx='2' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='svg' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEFSURBVEhLxZO9CsJAEAZ9XR/Awt7KwsZKSxvBTrCy0lYQewVbC7HKA0RG2LC395EcgWAxELJ7k/3Jjd6fqh6C/4pXm0M9nix+7PZnmRMpEk9n60bMs8qJZOLH89UIeKZCkxq8I0aO5UVPJo6SElQXidiqUIfbmC+3iRSyio+na3aQ5dE+Mb9I43K7Jw7oFKtDce6tYpLjGKjOJ3to3+dyFofFG7FPMqje4pFYtWHxVrGvIKJ2ARZPRhHbU9s2ikdhsAh/QFUdc9TIMrFqkSXyno/0/t1iiyV03jzoI1a7yMRca9qlCtpXo2Ek5CFUUsjEitiFyokUiX3VbbfRUyTuw0Diqv4C3ZJJCkClNP0AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-7, 0, 1404, 1047" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5gEMDBIUEEuZ/QAAA+pJREFUWEfFV2tPE0EU5X/wF/w3PCWAChGFSAwaE4zERAnyBWKMQT8ZCUESaKHyEgEtoIKiRhACtULDQ0CeRV6FlrbHPbMzsMtum5gIPeSk7Myde8/cuTOzm5ThzFBM1nhfo1djSCP+M+mTvhmDsURcFfycRrfGiEa7wf+TjMFYjCkEUM1bjXbGp0nGTKYApiQsG8+SjHmfAjyGxrOmhwKCJxrPkkEKsHSkO9J1OtMtfUb+q51dn0XA+ebzuNp5FddeXcPl9sumPkUGzG7JRlFnkbDLb8uPb/eqCFc6riCzOdNiYxJAlU+/PsXy7jLW9tYw92cOlR8qkeZIMw3KdeWi29ctbMipjSmUucvs7aZ1u8XtRVR/rLbYWAR0/OyAEUO/hkRWlA0d3O27i0AoIC109Ph6jmyU3R33HeyF9qQF0DjRGF9AqiMVDz89RDgalkOApZ0lFHYWHq0hHTSMN8jeYzBbXDJVD/T1fPS57AVC4ZDIJtuNMS0ZKO4qxureqhwGBMNBVLyvOBqY7crG6PKo7D3GQfgA5e/Kj2bIrDF7CicnomgpwqyWLAwvDMthOpommoRj8kb3DWzub8oeM1o8LcKGQRiMQRUG5wdNS6loESBSN3KcOoIz5sxTm1Lx5MsTRLU/gr/RqP4/4Vnz4MLLC8LuwfsHIu0Kz749s6SftAjgDErflGInuCOHAuuBdVx/fV30D8wOyFaIyp7ZnJFPEGNuv72NlKYUOCedslVvp0+1PEZaBLCIOAvORoFFyS3EImNQhXZvO16Mv5BPOmpHa8Uyjq2MyRbAu+7FxdaLtgeWRQDJNXT9cMnhOtq8bXpaI3pamV4+c2a7oV3RRnxe/IxbvbfgD/hlC8TWPll8irYCuFZ0zh2gwIxwryvMb82joL0AuS9zMbk2KVshdpBj0oFwRN/Kh5FDVA1V2a4/GTMDPDoXtheEE2L/cB9bB1vyCej19Qpbrit3iQIDbwQ25JMmaHdVHNf/lAEy05mJ/tl+6cYMBmFNcFYUYHcyKnBJWBN2MciYAui85kuNaZspcH/zIuKsWFiXWi+JQrND3fc62+pXjCmAg0q6S+DfPy4mBWbGeLPRlofQSfAeKOuzXlJGxhRA8vAZ+T0i3emIRCN4PPzYVFQMcG/gnqgTI3x+n7iq7bafYlwBdFw/Vi/d6WCV874wFhUD5LXlYdo/La10dE11mfzZMa4ABuFau2fcYqtNrE6IG87uxYIiHg0/wvjKuLDlRXSz52bM6leMK4CkY14iOa4cQTsbI7lstMtqzoqbekUKSPhLacJfyxP+YZLwTzMyoR+niurz/IfG0/o8p2/D53lG0l9Q06h0aX2OPwAAAABJRU5ErkJggg==" InformativeScreenshot="2d7bf382f92944eac771b2de8c6f7d31.png" Selector="&lt;html app='chrome.exe' title='Wordle Game - Play Unlimited' /&gt;" Url="https://wordlegame.org/" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="1. add contents of word dictionary file to array of strings&#xA;2. pick random word for first try&#xA;3. assign CurrentRow of the puzzle" DisplayName="Multiple Assign - pre run prep" sap:VirtualizedContainerService.HintSize="431,219" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[CompatibleWordArray]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[File.ReadAllLines("words.txt")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[CurrentWord]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[CompatibleWordArray(new Random().Next(0,CompatibleWordArray.Length))]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[CurrentRow]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">1</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <ui:LogMessage DisplayName="Log Message - log first randomly picked word" sap:VirtualizedContainerService.HintSize="1356,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Randomly picked word for first try: &quot; + CurrentWord]" />
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[isCompleted=False]" DisplayName="While - game state / restart loop" sap:VirtualizedContainerService.HintSize="1356,1394" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+      <ui:InterruptibleWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1320,1229" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Input Word" sap:VirtualizedContainerService.HintSize="1278,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Word input.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="CurrentWord">[CurrentWord]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State - check win condition" sap:VirtualizedContainerService.HintSize="1278,985" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="4" Version="V1">
+            <uix:NCheckState.IfExists>
+              <Sequence DisplayName="Target appears - game won" sap:VirtualizedContainerService.HintSize="376,286" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Assign - completed game state" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[isCompleted]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:LogMessage DisplayName="Log Message - log win message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Game has been won!&quot;]" />
+              </Sequence>
+            </uix:NCheckState.IfExists>
+            <uix:NCheckState.IfNotExists>
+              <Sequence DisplayName="Target does not appear - game continues or lost" sap:VirtualizedContainerService.HintSize="848,769" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State - check lose condition" sap:VirtualizedContainerService.HintSize="806,675" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="4" Version="V1">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears - game lost" sap:VirtualizedContainerService.HintSize="376,286" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Assign - completed game state" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[isCompleted]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:LogMessage DisplayName="Log Message - log game over message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Game has been lost.&quot;]" />
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.IfNotExists>
+                    <Sequence DisplayName="Target does not appear - game continues" sap:VirtualizedContainerService.HintSize="376,459" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Evaluate Result2 workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Evaluate Result2.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="CurrentRow">[CurrentRow]</InArgument>
+                          <OutArgument x:TypeArguments="s:String[]" x:Key="CorrectArray">[CorrectArray]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="AbsentString">[AbsentString]</OutArgument>
+                          <OutArgument x:TypeArguments="s:String[]" x:Key="ElsewhereArray">[ElsewhereArray]</OutArgument>
+                          <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="ElsewhereSingleList">[ElsewhereSingleList]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Generate New Word workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Generate New Word.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="s:String[]" x:Key="CompatibleWordArray">[CompatibleWordArray]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="NewWord">[CurrentWord]</OutArgument>
+                          <InArgument x:TypeArguments="s:String[]" x:Key="CorrectArray">[CorrectArray]</InArgument>
+                          <OutArgument x:TypeArguments="s:String[]" x:Key="NewCompatibleWordArray">[CurrentCompatibleWordArray]</OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="AbsentString">[AbsentString]</InArgument>
+                          <InArgument x:TypeArguments="s:String[]" x:Key="ElsewhereArray">[ElsewhereArray]</InArgument>
+                          <InArgument x:TypeArguments="scg:List(x:String)" x:Key="ElsewhereSingleList">[ElsewhereSingleList]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="CurrentRow">[CurrentRow]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <Assign DisplayName="Assign - +1 to row counter" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[CurrentRow]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[CurrentRow+1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </uix:NCheckState.IfNotExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable BrowserURL="https://wordlegame.org/" DesignTimeRectangle="785, 245, 350, 41" ElementType="Text" FriendlyName="'You Lost!'" FullSelectorArgument="&lt;webctrl aaname='You Lost!' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='You Lost!' parentid='root' tag='DIV' type='' class='top lost' check:innerText='You Lost!' /&gt;" Guid="5692e313-fcbd-496a-880b-9432c887c62c" ImageBase64="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" InformativeScreenshot="8fdeabc234426bc4d618c160e09e8fb7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle Game - Play Unlimited' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="800, 296, 320, 22" ElementType="Text" FriendlyName="'The answer was'" FullSelectorArgument="&lt;webctrl aaname='The answer was:' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='The answer was:' parentid='root' tag='DIV' type='' class='desc' check:innerText='The answer was:' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NCheckState.Target>
+                </uix:NCheckState>
+              </Sequence>
+            </uix:NCheckState.IfNotExists>
+            <uix:NCheckState.Target>
+              <uix:TargetAnchorable BrowserURL="https://wordlegame.org/" DesignTimeRectangle="304, 260, 350, 41" ElementType="Text" FriendlyName="'You Won!'" FullSelectorArgument="&lt;webctrl aaname='You Won! ' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='You Won! ' parentid='root' tag='DIV' type='' class='top ' check:innerText='You Won! ' /&gt;" Guid="046d4b3b-8d1c-4484-8f25-1a6b8310f821" ImageBase64="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" InformativeScreenshot="1d8b9e5ca510e3b13b6f6b97b91cf59d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle Game - Play Unlimited' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+            </uix:NCheckState.Target>
+          </uix:NCheckState>
+        </Sequence>
+      </ui:InterruptibleWhile.Body>
+    </ui:InterruptibleWhile>
+    <Delay DisplayName="Delay - after game is finished" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="1356,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Restart game" sap:VirtualizedContainerService.HintSize="1356,488" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="38fac1ef-dafb-49bc-8c75-3b501428b331" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,272" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - send enter to restart" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="38fac1ef-dafb-49bc-8c75-3b501428b331" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5gEMDBIUEEuZ/QAAA+pJREFUWEfFV2tPE0EU5X/wF/w3PCWAChGFSAwaE4zERAnyBWKMQT8ZCUESaKHyEgEtoIKiRhACtULDQ0CeRV6FlrbHPbMzsMtum5gIPeSk7Myde8/cuTOzm5ThzFBM1nhfo1djSCP+M+mTvhmDsURcFfycRrfGiEa7wf+TjMFYjCkEUM1bjXbGp0nGTKYApiQsG8+SjHmfAjyGxrOmhwKCJxrPkkEKsHSkO9J1OtMtfUb+q51dn0XA+ebzuNp5FddeXcPl9sumPkUGzG7JRlFnkbDLb8uPb/eqCFc6riCzOdNiYxJAlU+/PsXy7jLW9tYw92cOlR8qkeZIMw3KdeWi29ctbMipjSmUucvs7aZ1u8XtRVR/rLbYWAR0/OyAEUO/hkRWlA0d3O27i0AoIC109Ph6jmyU3R33HeyF9qQF0DjRGF9AqiMVDz89RDgalkOApZ0lFHYWHq0hHTSMN8jeYzBbXDJVD/T1fPS57AVC4ZDIJtuNMS0ZKO4qxureqhwGBMNBVLyvOBqY7crG6PKo7D3GQfgA5e/Kj2bIrDF7CicnomgpwqyWLAwvDMthOpommoRj8kb3DWzub8oeM1o8LcKGQRiMQRUG5wdNS6loESBSN3KcOoIz5sxTm1Lx5MsTRLU/gr/RqP4/4Vnz4MLLC8LuwfsHIu0Kz749s6SftAjgDErflGInuCOHAuuBdVx/fV30D8wOyFaIyp7ZnJFPEGNuv72NlKYUOCedslVvp0+1PEZaBLCIOAvORoFFyS3EImNQhXZvO16Mv5BPOmpHa8Uyjq2MyRbAu+7FxdaLtgeWRQDJNXT9cMnhOtq8bXpaI3pamV4+c2a7oV3RRnxe/IxbvbfgD/hlC8TWPll8irYCuFZ0zh2gwIxwryvMb82joL0AuS9zMbk2KVshdpBj0oFwRN/Kh5FDVA1V2a4/GTMDPDoXtheEE2L/cB9bB1vyCej19Qpbrit3iQIDbwQ25JMmaHdVHNf/lAEy05mJ/tl+6cYMBmFNcFYUYHcyKnBJWBN2MciYAui85kuNaZspcH/zIuKsWFiXWi+JQrND3fc62+pXjCmAg0q6S+DfPy4mBWbGeLPRlofQSfAeKOuzXlJGxhRA8vAZ+T0i3emIRCN4PPzYVFQMcG/gnqgTI3x+n7iq7bafYlwBdFw/Vi/d6WCV874wFhUD5LXlYdo/La10dE11mfzZMa4ABuFau2fcYqtNrE6IG87uxYIiHg0/wvjKuLDlRXSz52bM6leMK4CkY14iOa4cQTsbI7lstMtqzoqbekUKSPhLacJfyxP+YZLwTzMyoR+niurz/IfG0/o8p2/D53lG0l9Q06h0aX2OPwAAAABJRU5ErkJggg==" InformativeScreenshot="6e854376fa4209ad7ede06f843303e0b.png" Selector="&lt;html app='chrome.exe' title='Wordle Game - Play Unlimited' /&gt;" Url="https://wordlegame.org/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Main workflow - Restart bot" sap:VirtualizedContainerService.HintSize="1356,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Main.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>

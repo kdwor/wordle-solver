@@ -1,0 +1,125 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Word_input" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="CurrentWord" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1217,901</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Word_input_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Word_input" sap:VirtualizedContainerService.HintSize="476,836" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="CurrentLetter" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome - to input chosen word" sap:VirtualizedContainerService.HintSize="434,744" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8a1eaa7b-7535-4d91-8d78-7ac6da2d7843" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do - typing sequence" sap:VirtualizedContainerService.HintSize="376,528" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into game window" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="8a1eaa7b-7535-4d91-8d78-7ac6da2d7843" Text="[CurrentWord]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://wordlegame.org/" DesignTimeRectangle="808, 159, 56, 56" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='game-wrapper' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='game-wrapper' tag='DIV' class='Row-letter' aaname='' /&gt;" Guid="87230a4c-af6f-4a8a-a252-fe49ad13a482" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEmSURBVGhD7dvNCsIwEARg3/8hBUVFpdS/SCgW1k7ZjVWjnnedhWEObYWvqbdkJn82BN9uvbTHJPPFzm2W60b2zUkuKavqMU9g3FD7Ac/B4k2ngHPuyk1Nm2RYaLfJXT8azAObTQHjE8DF4zlXf8RjYIEJNpsCxnc/vo3h7dQe9hhYYILNpoBxAak96DnmsiG49pDnEKxNcJQQrE1wlBCsTXCUEKxNcJQQrE1wlBCsTXCUEKxNcJQQrE1wlBCsTXCUEKxNcJQQrE1wlBCsTXCUEKxNcJQQrE1wlBCsLZttO15I1676oNd8BNsGce+74af5ukHcjgAsV82I9rzS2Bj+8wgA5uD8NEstrydbnsAYvA18Avaf9hhs+cdplunK2ryBo8+fgUXux7E3Fs8Xz/QAAAAASUVORK5CYII=" InformativeScreenshot="7d793bfe5aa3f10b1b39f5c516f04677.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle Game - Play Unlimited' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="726, 117, 40, 34" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='generator' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAmCAYAAAC/H3lnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVFhH7ZgxbsJAEEVzS87AGTgDV+AEKShSp6BInYImJQ0NVEREClKyyUd61jBex7vI2N6Ij76A8S7zdnbWEn4IhakV+Pv31ZdSckWBT1+ncPg8hP3HPmzft71aOZVbDDHVgI+nY9gdd9Ef69NiEIvXBbAGxCYPaQ9dAWsLxlBZbzHZ9qiA1TexCWOw2FAFPMQBS7XY0BlYt5PYwDGZW15V4digMRndgW9l9H+BV5vV2evdunZt+baMxpnj49cYJQNPn6Zh8jgJ85d5NC5b6MXr4hybPc8uxstaYO5CUDKwQD2Y3onJAmG8QBUTODFZYxTXQm28zSgZmEQWjCpiqmkX4itp59h4m1HWoSMRbUEVfVsIku/MpZ/tThGTGddklAUMmEBtFX31qSLbbq/HnNIeKAvYbieVIhmLUZzP9K8qyLyYbwZsE3souxgc22o7zl/7yygLWAbUQ/kqNlWtd2B7aDyUXQyV92ZhTQtqMsoG1gECzEPZ6nHr68ooG1hWlZqAdI026dLoKuAhjO7AtzIqE7jIP6FF/c2XinuQUtyjKqmoh4FIA8ZQaTF4WKkGLGkL1DdDHETlVG7bBlZRYKuUx/hdKSVXK/C4FMIPwZ0f2D3j4UkAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - send enter to verify" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="8a1eaa7b-7535-4d91-8d78-7ac6da2d7843" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5gEMDBIUEEuZ/QAAA+pJREFUWEfFV2tPE0EU5X/wF/w3PCWAChGFSAwaE4zERAnyBWKMQT8ZCUESaKHyEgEtoIKiRhACtULDQ0CeRV6FlrbHPbMzsMtum5gIPeSk7Myde8/cuTOzm5ThzFBM1nhfo1djSCP+M+mTvhmDsURcFfycRrfGiEa7wf+TjMFYjCkEUM1bjXbGp0nGTKYApiQsG8+SjHmfAjyGxrOmhwKCJxrPkkEKsHSkO9J1OtMtfUb+q51dn0XA+ebzuNp5FddeXcPl9sumPkUGzG7JRlFnkbDLb8uPb/eqCFc6riCzOdNiYxJAlU+/PsXy7jLW9tYw92cOlR8qkeZIMw3KdeWi29ctbMipjSmUucvs7aZ1u8XtRVR/rLbYWAR0/OyAEUO/hkRWlA0d3O27i0AoIC109Ph6jmyU3R33HeyF9qQF0DjRGF9AqiMVDz89RDgalkOApZ0lFHYWHq0hHTSMN8jeYzBbXDJVD/T1fPS57AVC4ZDIJtuNMS0ZKO4qxureqhwGBMNBVLyvOBqY7crG6PKo7D3GQfgA5e/Kj2bIrDF7CicnomgpwqyWLAwvDMthOpommoRj8kb3DWzub8oeM1o8LcKGQRiMQRUG5wdNS6loESBSN3KcOoIz5sxTm1Lx5MsTRLU/gr/RqP4/4Vnz4MLLC8LuwfsHIu0Kz749s6SftAjgDErflGInuCOHAuuBdVx/fV30D8wOyFaIyp7ZnJFPEGNuv72NlKYUOCedslVvp0+1PEZaBLCIOAvORoFFyS3EImNQhXZvO16Mv5BPOmpHa8Uyjq2MyRbAu+7FxdaLtgeWRQDJNXT9cMnhOtq8bXpaI3pamV4+c2a7oV3RRnxe/IxbvbfgD/hlC8TWPll8irYCuFZ0zh2gwIxwryvMb82joL0AuS9zMbk2KVshdpBj0oFwRN/Kh5FDVA1V2a4/GTMDPDoXtheEE2L/cB9bB1vyCej19Qpbrit3iQIDbwQ25JMmaHdVHNf/lAEy05mJ/tl+6cYMBmFNcFYUYHcyKnBJWBN2MciYAui85kuNaZspcH/zIuKsWFiXWi+JQrND3fc62+pXjCmAg0q6S+DfPy4mBWbGeLPRlofQSfAeKOuzXlJGxhRA8vAZ+T0i3emIRCN4PPzYVFQMcG/gnqgTI3x+n7iq7bafYlwBdFw/Vi/d6WCV874wFhUD5LXlYdo/La10dE11mfzZMa4ABuFau2fcYqtNrE6IG87uxYIiHg0/wvjKuLDlRXSz52bM6leMK4CkY14iOa4cQTsbI7lstMtqzoqbekUKSPhLacJfyxP+YZLwTzMyoR+niurz/IfG0/o8p2/D53lG0l9Q06h0aX2OPwAAAABJRU5ErkJggg==" InformativeScreenshot="9a7fec01c5175419af5c9cc487ce2c9a.png" Selector="&lt;html app='chrome.exe' title='Wordle Game - Play Unlimited' /&gt;" Url="https://wordlegame.org/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
